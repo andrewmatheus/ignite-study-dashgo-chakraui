@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic' // usado para fazer lazy loading
 import { Box, Flex, SimpleGrid, Text, theme } from '@chakra-ui/react'
+import { ApexOptions } from 'apexcharts';
  
 // import Chart from 'react-apexcharts' feito através do dynamic para não passar pela camada do next de server side rendering
 
@@ -10,7 +11,7 @@ const Chart = dynamic(() => import('react-apexcharts'), {
   ssr: false, // ao colocar essa opção o mesmo só é carregado pelo browser e nunca do lado do servidor
 })
 
-const options = {
+const options: ApexOptions = {
   chart: {
     toolbar: {
       show: false,
@@ -56,7 +57,7 @@ const options = {
       opacityTo: 0.3, 
     }
   }
-}
+};
 
 const series= [
   {
